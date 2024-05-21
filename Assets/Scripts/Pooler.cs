@@ -1,16 +1,19 @@
 using UnityEngine;
 
-public class Pooler : MonoBehaviour
+namespace abouttt.ObjectPool
 {
-    [field: SerializeField]
-    public GameObject Prefab { get; private set; }
-    [SerializeField]
-    private int _size;
-    [SerializeField]
-    private int _max = -1;
-
-    private void Start()
+    public class Pooler : MonoBehaviour
     {
-        PoolManager.CreatePool(Prefab, _size, _max);
+        [field: SerializeField]
+        public GameObject Prefab { get; private set; }
+        [SerializeField]
+        private int _size;
+        [SerializeField]
+        private int _max = -1;
+
+        private void Start()
+        {
+            PoolManager.CreatePool(Prefab, _size, _max);
+        }
     }
 }
